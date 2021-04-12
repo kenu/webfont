@@ -14,5 +14,5 @@ jobs:
         key: ${{ secrets.KEY }}
         port: ${{ secrets.PORT }}
         script: |
-          ./deploy.sh
+          ./deploy-font.sh
 
