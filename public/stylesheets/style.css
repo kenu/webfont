@@ -5,6 +5,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'WandohopeB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeB.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KCC-eunyoung';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KCC-eunyoung-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   padding: 50px;
   font: 14px "KOTRA_SONGEULSSI", Helvetica, Arial, sans-serif;

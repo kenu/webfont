@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <select name="fonts" id="fonts">
+    <option value="KOTRA_SONGEULSSI">코트라 손글씨체</option>
+    <option value="WandohopeB">완도희망체 Regular</option>
+    <option value="KCC-eunyoung">KCC은영체</option>
+  </select>
+  <h1>
+    <%= title %>
+  </h1>
+  <p>Welcome to <%= title %>
+  </p>
+  <p>* 눈누: <a href="https://noonnu.cc/" target="_blank">https://noonnu.cc/</a>
+  </p>
+  <script>
+    window.onload = function () {
+      var list = document.getElementById('fonts');
+      list.addEventListener('change', change);
+    };
+    function change(e) {
+      var fontFamilyName = e.currentTarget.value;
+      document.body.style.fontFamily = fontFamilyName;
+    }
+  </script>
+</body>
+
 </html>
