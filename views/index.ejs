@@ -5,14 +5,13 @@
   <title>
     <%= title %>
   </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
 <body>
   <select name="fonts" id="fonts">
-    <option value="KOTRA_SONGEULSSI">코트라 손글씨체</option>
-    <option value="WandohopeB">완도희망체 Regular</option>
-    <option value="KCC-eunyoung">KCC은영체</option>
+    <!-- <option value="KOTRA_SONGEULSSI">코트라 손글씨체</option> -->
   </select>
   <h1>
     <%= title %>
@@ -21,9 +20,21 @@
   </p>
   <p>* 눈누: <a href="https://noonnu.cc/" target="_blank">https://noonnu.cc/</a>
   </p>
+  <p>* GitHub: <a href="https://github.com/kenu/webfont" target="_balnk">https://github.com/kenu/webfont</p>
   <script>
+    var fontList = [
+      {name: 'ON월인석보L', face: 'TTWorinseokboL', size: '324kB'},
+      {name: 'ON화룡도L', face: 'ONHyaryongdoL', size: '696kB'},
+      {name: '코트라 손글씨체', face: 'KOTRA_SONGEULSSI', size: '659kB'},
+      {name: '완도희망체 Regular', face: 'WandohopeB', size: '1.3MB'},
+      {name: 'KCC은영체', face: 'KCC-eunyoung', size: '726kB'},
+    ];
     window.onload = function () {
       var list = document.getElementById('fonts');
+      fontList.forEach(function (font) {
+        var option = '<option value="' + font.face + '">' + font.name + ' (' + font.size + ')' + '</option>';
+        list.innerHTML += option;
+      });
       list.addEventListener('change', change);
     };
     function change(e) {
