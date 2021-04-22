@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <select name="fonts" id="fonts">
+  <select name="fonts" id="fonts" size="5">
     <!-- <option value="KOTRA_SONGEULSSI">코트라 손글씨체</option> -->
   </select>
   <h1>
@@ -20,14 +20,19 @@
   </p>
   <p>* 눈누: <a href="https://noonnu.cc/" target="_blank">https://noonnu.cc/</a>
   </p>
-  <p>* GitHub: <a href="https://github.com/kenu/webfont" target="_balnk">https://github.com/kenu/webfont</p>
+  <p>* GitHub: <a href="https://github.com/kenu/webfont" target="_balnk">https://github.com/kenu/webfont</a></p>
+  <hr>
+  <textarea name="css" id="css" cols="60" rows="11"></textarea>
+
   <script>
     var fontList = [
-      {name: 'ON월인석보L', face: 'TTWorinseokboL', size: '324kB'},
-      {name: 'ON화룡도L', face: 'ONHyaryongdoL', size: '696kB'},
-      {name: '코트라 손글씨체', face: 'KOTRA_SONGEULSSI', size: '659kB'},
-      {name: '완도희망체 Regular', face: 'WandohopeB', size: '1.3MB'},
-      {name: 'KCC은영체', face: 'KCC-eunyoung', size: '726kB'},
+      { name: 'ON월인석보L', face: 'TTWorinseokboL', size: '324kB', uri: '/noonfonts_ten@1.2/TTWorinseokboL' },
+      { name: 'ON화룡도L', face: 'ONHyaryongdoL', size: '696kB', uri: '/noonfonts_20-10-21@1.0/ONHyaryongdoL' },
+      { name: '코트라 손글씨체', face: 'KOTRA_SONGEULSSI', size: '659kB', uri: '/noonfonts_20-10-21@1.0/KOTRA_SONGEULSSI' },
+      { name: '완도희망체 Regular', face: 'WandohopeB', size: '1.3MB', uri: '/noonfonts_20-10@1.0/WandohopeB' },
+      { name: 'KCC은영체', face: 'KCC-eunyoung', size: '726kB', uri: '/noonfonts_one@1.0/KCC-eunyoung-Regular' },
+      { name: '교보손글씨', face: 'KyoboHand', size: '890kB', uri: '/noonfonts_20-04@1.0/KyoboHand' },
+      { name: '중학생', face: 'Middleschool_student', size: '3.5MB', uri: '/naverfont_08@1.0/Middleschool_student' },
     ];
     window.onload = function () {
       var list = document.getElementById('fonts');
@@ -36,10 +41,29 @@
         list.innerHTML += option;
       });
       list.addEventListener('change', change);
+      document.getElementById('css').addEventListener('focus', (e) => {e.currentTarget.select()});
+      console.log(fontList[0]);
+      changeFont(fontList[0].face);
     };
     function change(e) {
       var fontFamilyName = e.currentTarget.value;
+      changeFont(fontFamilyName);
+    }
+    function changeFont(fontFamilyName) {
       document.body.style.fontFamily = fontFamilyName;
+      var selected = fontList.find(font => { return font.face === fontFamilyName; });
+
+      var template = `
+@font-face {
+  font-family: '${fontFamilyName}';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu${selected.uri}.woff') format('woff');
+}
+
+body {
+  font: 14px "${fontFamilyName}", Helvetica, Arial, sans-serif;
+}
+`;
+      document.getElementById('css').value = template;
     }
   </script>
 </body>

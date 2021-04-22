@@ -1,9 +1,7 @@
 <style>
-  @font-face {
+@font-face {
   font-family: 'KOTRA_SONGEULSSI';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_SONGEULSSI.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
 }
 
 body {

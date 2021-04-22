@@ -1,36 +1,36 @@
 @font-face {
   font-family: 'KOTRA_SONGEULSSI';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_SONGEULSSI.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
 }
 
 @font-face {
   font-family: 'WandohopeB';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeB.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
 }
 
 @font-face {
   font-family: 'KCC-eunyoung';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KCC-eunyoung-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
 }
 
 @font-face {
   font-family: 'ONHyaryongdoL';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/ONHyaryongdoL.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
 }
 
 @font-face {
   font-family: 'TTWorinseokboL';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_ten@1.2/TTWorinseokboL.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KyoboHand';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Middleschool_student';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_08@1.0/Middleschool_student.woff') format('woff');
 }
 
 body {
@@ -40,4 +40,8 @@ body {
 
 a {
   color: #00B7FF;
+}
+
+#css {
+  font-size: x-small;
 }
