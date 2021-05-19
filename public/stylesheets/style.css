@@ -33,6 +33,16 @@
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_08@1.0/Middleschool_student.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'ROEHOE-CHAN';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/ROEHOE-CHAN.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Dancing Script';
+  src: url('http://localhost:3000/fonts/DancingScript-VariableFont_wght.woff') format('woff');
+}
+
 body {
   padding: 50px;
   font: 14px "TTWorinseokboL", Helvetica, Arial, sans-serif;

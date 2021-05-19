@@ -20,7 +20,11 @@
   </p>
   <p>* 눈누: <a href="https://noonnu.cc/" target="_blank">https://noonnu.cc/</a>
   </p>
+  <p>* Google: <a href="https://noonnu.cc/" target="_blank">https://noonnu.cc/</a>
+  </p>
   <p>* GitHub: <a href="https://github.com/kenu/webfont" target="_balnk">https://github.com/kenu/webfont</a></p>
+  <p style="font-family: 'Courier New', Courier, monospace;">[아헿헿, 뚫흘뚫훍]</p>
+  <p>[아헿헿, 뚫흘뚫훍]</p>
   <hr>
   <textarea name="css" id="css" cols="60" rows="11"></textarea>
 
@@ -32,8 +36,12 @@
       { name: '완도희망체 Regular', face: 'WandohopeB', size: '1.3MB', uri: '/noonfonts_20-10@1.0/WandohopeB' },
       { name: 'KCC은영체', face: 'KCC-eunyoung', size: '726kB', uri: '/noonfonts_one@1.0/KCC-eunyoung-Regular' },
       { name: '교보손글씨', face: 'KyoboHand', size: '890kB', uri: '/noonfonts_20-04@1.0/KyoboHand' },
+      { name: '노회찬체', face: 'ROEHOE-CHAN', size: '1.4MB', uri: '/noonfonts_20-10@1.0/ROEHOE-CHAN' },
       { name: '중학생', face: 'Middleschool_student', size: '3.5MB', uri: '/naverfont_08@1.0/Middleschool_student' },
+      { name: 'Dancing Script', face: 'Dancing Script', size: '129KB', uri: location.href + '/fonts/DancingScript-VariableFont_wght.woff' },
     ];
+    //Dancing Script
+    https://fonts.gstatic.com/s/adobeblank/v10/ieV62YNKKGqPJteRQT8EQmobI8hSxw.woff2
     window.onload = function () {
       var list = document.getElementById('fonts');
       fontList.forEach(function (font) {
@@ -52,11 +60,14 @@
     function changeFont(fontFamilyName) {
       document.body.style.fontFamily = fontFamilyName;
       var selected = fontList.find(font => { return font.face === fontFamilyName; });
+      var fontUrl = selected.uri.startsWith('http') ?
+      selected.uri :
+      `https://cdn.jsdelivr.net/gh/projectnoonnu${selected.uri}.woff`;
 
       var template = `
 @font-face {
   font-family: '${fontFamilyName}';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu${selected.uri}.woff') format('woff');
+  src: url('${fontUrl}') format('woff');
 }
 
 body {
